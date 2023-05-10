@@ -3,3 +3,4 @@ tcc/*.csv
 __pycache__
 .ipynb_checkpoints
 output/*
+./airflow/logs/*
