@@ -91,3 +91,44 @@ $ python3 manage_results.py
 ```
 
 This script will create document files for each topic containg all the questions related to this topic.
+
+
+## Run with docker
+
+### first steps
+
+- Download docker and docker compose
+
+- Extract the so_questions.csv.zip file present in TCC folder
+
+### start docker container
+
+Run the docker container
+
+``` make start ```
+
+### Install dependencies and exec docker
+
+To install the dependencies and enter the container
+
+``` make init ```
+
+### ↳ follow the next steps using bash opened by the make init command:
+
+### Prepare data
+
+Prepare data
+
+``` make prepare ```
+
+### Process data
+
+Process the data with mallet
+
+``` make process ```
+
+### Results
+
+Process the results
+
+```make results```
