@@ -6,15 +6,21 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'documentation web'
-copyright = '2023, Madu01'
-author = 'Madu01'
+project = 'StackOverflow Mining'
+copyright = '2023'
+author = ''
 release = '0.0.1'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = ['myst_parser']
+
+source_suffix = {
+    '.rst': 'restructuredtext',
+    '.txt': 'markdown',
+    '.md': 'markdown',
+}
 
 templates_path = ['_templates']
 exclude_patterns = []

@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="introduction to the project" href="README.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>StackOverflow Mining 0.0.1 documentation</title>
+        <title>Experiment 01 - 02/15/2022 - StackOverflow Mining 0.0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">StackOverflow Mining 0.0.1 documentation</div></a>
+      <a href="index.html"><div class="brand">StackOverflow Mining 0.0.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,7 +143,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
   
   
   <span class="sidebar-brand-text">StackOverflow Mining 0.0.1 documentation</span>
@@ -195,31 +195,68 @@
           </label>
         </div>
         <article role="main">
-          <section id="welcome-to-stackoverflow-mining">
-<h1>Welcome to StackOverflow Mining!<a class="headerlink" href="#welcome-to-stackoverflow-mining" title="Permalink to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="README.html">introduction to the project</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="README.html#replication-package-for-the-msr2021-challenges-in-developing-desktop-web-apps-a-study-of-stack-overflow-and-github-paper">Replication package for the MSR2021 “Challenges in Developing Desktop Web Apps: a Study of Stack Overflow and GitHub” paper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#authors-gian-luca-scoccia-partizio-migliarini-marco-autili">Authors: Gian Luca Scoccia, Partizio Migliarini, Marco Autili</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#online-appendix">Online appendix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#replication-package">Replication package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#scripts">Scripts</a></li>
-</ul>
-</li>
-</ul>
+          <section id="experiment-01-02-15-2022">
+<h1>Experiment 01 - 02/15/2022<a class="headerlink" href="#experiment-01-02-15-2022" title="Permalink to this heading">#</a></h1>
+<p>The first experiment consists of using the MSR2021Replication project with different datasets. The dataset used will be the <a class="reference internal" href="#../retrieve_so_rn_dataset.md"><span class="xref myst">Stack Overflow questions under the React Native tag</span></a>.</p>
+<section id="create-file-tree">
+<h2>Create file tree<a class="headerlink" href="#create-file-tree" title="Permalink to this heading">#</a></h2>
+<p>To run the experiment, new folders were created to contain the generated data. See the file tree bellow:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>├── tcc_data/
+│   ├── processed/
+│   │   └── SO_T_output_Mallet/
+│   │       └── topics/
+|   |
+│   └── raw/
+|       └── so_questions.csv
+|
+├── tcc_mallet/
+│   ├── so_data/
+│   └── so_results/
+|
+└── tcc_topics/
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Welcome to StackOverflow Mining contributing guide <!-- omit in toc --></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="CONTRIBUTING.html#new-contributor-guide">New contributor guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CONTRIBUTING.html#getting-started">Getting started</a></li>
-</ul>
-</li>
-</ul>
+<p>The dataset used was ziped and added at <code class="docutils literal notranslate"><span class="pre">tcc_data/raw/so_questions.csv.zip</span></code>, before running the processes unzip the CSV file. All scripts used at the <code class="docutils literal notranslate"><span class="pre">notebooks/</span></code> folder were adapted to fit this experiment’s file tree.</p>
+</section>
+<section id="clean-the-dataset-data">
+<h2>Clean the dataset data<a class="headerlink" href="#clean-the-dataset-data" title="Permalink to this heading">#</a></h2>
+<p>The first step is to clean the datasets data using the <code class="docutils literal notranslate"><span class="pre">clean_stackoverflow_data.py</span></code> script. Enter the <code class="docutils literal notranslate"><span class="pre">notebooks/</span></code> folder and run the following command:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>clean_stackoverflow_data.py
+</pre></div>
 </div>
+<p>This will generate another dataset CSV file at <code class="docutils literal notranslate"><span class="pre">tcc_data/processed/so_questions.csv</span></code> without HTML tags and stopwords.</p>
+</section>
+<section id="export-dataset-to-mallet">
+<h2>Export dataset to Mallet<a class="headerlink" href="#export-dataset-to-mallet" title="Permalink to this heading">#</a></h2>
+<p>The Mallet tool needs the questions input to be separated into diferent documents, the <code class="docutils literal notranslate"><span class="pre">export_so_to_mallet.py</span></code> script creates <code class="docutils literal notranslate"><span class="pre">.txt</span></code> files to all questions on the CSV dataset.</p>
+<p>For this experiment the files were created using only the questions title.</p>
+<p>To run the script, run the following command at the <code class="docutils literal notranslate"><span class="pre">notebooks/</span></code> folder.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>export_so_to_mallet.py
+</pre></div>
+</div>
+<p>The files for each questions will be at the <code class="docutils literal notranslate"><span class="pre">tcc_mallet/so_data/</span></code> folder. The file names will be the question’s ID.</p>
+</section>
+<section id="run-mallet">
+<h2>Run Mallet<a class="headerlink" href="#run-mallet" title="Permalink to this heading">#</a></h2>
+<p>With the questions separeted into diferent files, run the mallet tool with the following comands:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mallet/mallet-2.0.8/bin/mallet<span class="w"> </span>import-dir<span class="w"> </span>--input<span class="w"> </span>tcc_mallet/so_data/<span class="w"> </span>--output<span class="w"> </span>tcc_mallet/so.mallet<span class="w"> </span>--keep-sequence<span class="w"> </span>--remove-stopwords<span class="w"> </span>--extra-stopwords<span class="w"> </span>tcc_mallet/extra_stopwords_so.txt
+</pre></div>
+</div>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>mallet/mallet-2.0.8/bin/mallet<span class="w"> </span>train-topics<span class="w"> </span>--random-seed<span class="w"> </span><span class="m">100</span><span class="w"> </span>--input<span class="w"> </span>tcc_mallet/so.mallet<span class="w"> </span>--num-topics<span class="w"> </span><span class="m">15</span><span class="w"> </span>--optimize-interval<span class="w"> </span><span class="m">20</span><span class="w"> </span>--output-state<span class="w"> </span>tcc_mallet/so-topic-state.gz<span class="w"> </span>--output-topic-keys<span class="w"> </span>tcc_mallet/so_keys.txt<span class="w"> </span>--output-doc-topics<span class="w"> </span>tcc_mallet/so_composition.txt<span class="w"> </span>--diagnostics-file<span class="w"> </span>tcc_mallet/so_results/so_diagnostics.xml
+</pre></div>
+</div>
+</section>
+<section id="understand-the-mallet-output">
+<h2>Understand the mallet output<a class="headerlink" href="#understand-the-mallet-output" title="Permalink to this heading">#</a></h2>
+<p>To understand the mallet output the following script is used to create <code class="docutils literal notranslate"><span class="pre">.csv</span></code> tables to separate the files in the topics using the output generated by the mallet tool.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>parse_topics_composition.py
+</pre></div>
+</div>
+<p>To evaluate the generated topics, the following script was created to place all the topics content into one single file, to compare and understands the similarities.</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>python3<span class="w"> </span>unite_topics_in_one_file.py
+</pre></div>
+</div>
+</section>
 </section>
 
         </article>
@@ -227,15 +264,7 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="README.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">introduction to the project</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
+          
           
         </div>
         <div class="bottom-of-page">
@@ -267,7 +296,12 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Welcome to StackOverflow Mining!</a><ul>
+<li><a class="reference internal" href="#">Experiment 01 - 02/15/2022</a><ul>
+<li><a class="reference internal" href="#create-file-tree">Create file tree</a></li>
+<li><a class="reference internal" href="#clean-the-dataset-data">Clean the dataset data</a></li>
+<li><a class="reference internal" href="#export-dataset-to-mallet">Export dataset to Mallet</a></li>
+<li><a class="reference internal" href="#run-mallet">Run Mallet</a></li>
+<li><a class="reference internal" href="#understand-the-mallet-output">Understand the mallet output</a></li>
 </ul>
 </li>
 </ul>

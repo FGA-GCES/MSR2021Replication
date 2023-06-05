@@ -3,18 +3,17 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to documentation web's documentation!
-=============================================
+Welcome to StackOverflow Mining!
+================================
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Introduction
 
+   README
+  
+.. toctree::
+   :maxdepth: 2
+   :caption: Contributing
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   CONTRIBUTING

@@ -3,13 +3,13 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="introduction to the project" href="README.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
 
     <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
-        <title>StackOverflow Mining 0.0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+        <title>commit politics - StackOverflow Mining 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
 
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">StackOverflow Mining 0.0.1 documentation</div></a>
+      <a href="../index.html"><div class="brand">StackOverflow Mining 0.0.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -143,12 +143,12 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
   <span class="sidebar-brand-text">StackOverflow Mining 0.0.1 documentation</span>
   
-</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
@@ -156,11 +156,11 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="README.html">introduction to the project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../README.html">introduction to the project</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Welcome to StackOverflow Mining contributing guide <!-- omit in toc --></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Welcome to StackOverflow Mining contributing guide <!-- omit in toc --></a></li>
 </ul>
 
 </div>
@@ -195,31 +195,23 @@
           </label>
         </div>
         <article role="main">
-          <section id="welcome-to-stackoverflow-mining">
-<h1>Welcome to StackOverflow Mining!<a class="headerlink" href="#welcome-to-stackoverflow-mining" title="Permalink to this heading">#</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="README.html">introduction to the project</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="README.html#replication-package-for-the-msr2021-challenges-in-developing-desktop-web-apps-a-study-of-stack-overflow-and-github-paper">Replication package for the MSR2021 “Challenges in Developing Desktop Web Apps: a Study of Stack Overflow and GitHub” paper</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#authors-gian-luca-scoccia-partizio-migliarini-marco-autili">Authors: Gian Luca Scoccia, Partizio Migliarini, Marco Autili</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#online-appendix">Online appendix</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#replication-package">Replication package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="README.html#scripts">Scripts</a></li>
-</ul>
-</li>
-</ul>
+          <section id="commit-politics">
+<h1>commit politics<a class="headerlink" href="#commit-politics" title="Permalink to this heading">#</a></h1>
+<p>Changes must be made following a pattern, indicating the issue resolved and the functionality (or fix) added.</p>
+<p><strong>➔ Use tags to define the purpose of the commit:</strong></p>
+<p><code class="docutils literal notranslate"><span class="pre">ADD</span></code> : when to add a new feature</p>
+<p><code class="docutils literal notranslate"><span class="pre">DEL</span></code> : If it is a commit related to removing something</p>
+<p><code class="docutils literal notranslate"><span class="pre">UPDATE</span></code> : when to update some functionality</p>
+<p><code class="docutils literal notranslate"><span class="pre">FIX</span></code> : for referencing fixes</p>
+<p><code class="docutils literal notranslate"><span class="pre">DOC</span></code> : to indicate documentation</p>
+<p><code class="docutils literal notranslate"><span class="pre">REFACT</span></code> : indicates code refactoring</p>
+<p><code class="docutils literal notranslate"><span class="pre">DOC</span></code> : indicates relationship with documentation</p>
+<section id="example-commit-structure">
+<h2>Example commit structure:<a class="headerlink" href="#example-commit-structure" title="Permalink to this heading">#</a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>git commit -m &quot;[tag] (Issue #x) : descriptive message&quot;
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Welcome to StackOverflow Mining contributing guide <!-- omit in toc --></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="CONTRIBUTING.html#new-contributor-guide">New contributor guide</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CONTRIBUTING.html#getting-started">Getting started</a></li>
-</ul>
-</li>
-</ul>
-</div>
+</section>
 </section>
 
         </article>
@@ -227,15 +219,7 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="README.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">introduction to the project</div>
-              </div>
-              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
-            </a>
+          
           
         </div>
         <div class="bottom-of-page">
@@ -267,7 +251,8 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Welcome to StackOverflow Mining!</a><ul>
+<li><a class="reference internal" href="#">commit politics</a><ul>
+<li><a class="reference internal" href="#example-commit-structure">Example commit structure:</a></li>
 </ul>
 </li>
 </ul>
@@ -279,9 +264,9 @@
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/scripts/furo.js"></script>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
     </body>
 </html>
