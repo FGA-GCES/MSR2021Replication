@@ -10,7 +10,7 @@ Welcome to StackOverflow Mining!
    :maxdepth: 2
    :caption: Introduction
 
-   README
+   intro
   
 .. toctree::
    :maxdepth: 2
