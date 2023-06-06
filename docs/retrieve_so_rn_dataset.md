@@ -29,6 +29,6 @@ It was necessary to run the query one more time. The last query searched for que
 
 Each query resulted in a CSV table that was downloaded. The three files were merged, creating one dataset with all react-native questions.
 
-This dataset is at `tcc/so_questions.csv`.
+This dataset is located at `questions_dataset/so_questions.csv`.
 
 

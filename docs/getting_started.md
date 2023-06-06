@@ -54,7 +54,7 @@ Use the following commands to export the variables so scripts can use the correc
 
 ```sh
 # Export path to the raw dataset
-$ export DATASET_PATH=./tcc/so_questions.csv
+$ export DATASET_PATH=./questions_dataset/so_questions.csv
 
 # Export the output path
 $ export OUTPUT_PATH=./output
