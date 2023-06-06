@@ -8,7 +8,7 @@ In this guide you will get an overview of the contribution workflow from opening
 
 ## New contributor guide
 
-To get an overview of the project, read the [README](./docs_contributing/README.md).
+To get an overview of the project, read the [README](intro.md).
 
 We categorize our issues avaluating two metrics:
 - Skill level
