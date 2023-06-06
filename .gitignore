@@ -1,5 +1,5 @@
 .DS_Store
-tcc/*.csv
+questions_dataset/*.csv
 __pycache__
 .ipynb_checkpoints
 output/*
