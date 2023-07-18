@@ -4,6 +4,7 @@ services:
   notebook:
     container_name: notebook
     build: .
+    image: msr2021replication
     ports:
       - 8888:8888
       - 40000:40000
@@ -15,12 +16,4 @@ services:
       - ./output/:/app/output
       - ./output/so_results:/app/output/so_results
       - ./extra_stop_words:/app/extra_stop_words
-
-  test-r:
-    container_name: test-r
-    build:
-      context: .
-      dockerfile: dockerfiler
-    volumes:
-      - ./notebook:/app
-      - ./data:/app/data
+      - ./tests:/app/tests
