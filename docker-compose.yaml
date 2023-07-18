@@ -4,6 +4,7 @@ services:
   notebook:
     container_name: notebook
     build: .
+    image: msr2021replication
     ports:
       - 8888:8888
       - 40000:40000
@@ -15,13 +16,4 @@ services:
       - ./output/:/app/output
       - ./output/so_results:/app/output/so_results
       - ./extra_stop_words:/app/extra_stop_words
-
-  notebook-test:
-    container_name: notebook-test
-    build:
-      context: .
-      dockerfile: DockerfileTest
-    volumes:
-      - './notebook/:/home/notebook'
-    command:
-      bash -c "pytest -vv --cov"
+      - ./tests:/app/tests

@@ -4,11 +4,9 @@ library(ggplot2)
 library(reshape2)
 library(nortest)
 
-setwd("/Users/gianlucascoccia/Desktop/MSR2021/analysis/notebook")
-
 # Load data
-so = read.csv("../data/processed/so_test_data.csv", header = TRUE)
-gh = read.csv("../data/processed/gh_test_data.csv", header = TRUE)
+so = read.csv("/app/data/processed/so_test_data.csv", header = TRUE)
+gh = read.csv("/app/data/processed/gh_test_data.csv", header = TRUE)
 
 # Extract relevant columns from dataframes 
 so_data = matrix(c(so$time_topic_2, so$time_topic_5, so$time_topic_1, so$time_topic_11, so$time_topic_4, so$time_topic_13,

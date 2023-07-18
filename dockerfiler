@@ -1,0 +1,16 @@
+FROM rocker/r-base:latest
+
+# Instalar pacotes R necessários
+RUN R -e "install.packages(c('ggplot2', 'reshape2', 'nortest'), repos='http://cran.rstudio.com/')"
+RUN apt-get update && apt-get install -y libmpfr-dev
+RUN R -e "install.packages('PMCMRplus', repos='http://cran.rstudio.com/')"
+
+# Copiar o código R e a pasta data para dentro do contêiner
+COPY notebook/tests.r /app/tests.r
+COPY data /app/data
+
+# Diretório de trabalho dentro do contêiner
+WORKDIR /app
+
+# Comando para executar o script R
+CMD ["Rscript", "/app/tests.r"]

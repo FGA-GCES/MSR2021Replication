@@ -23,3 +23,6 @@ process:
 results:
 	python3 notebook/manage_results.py
 	clear
+
+test:
+	docker exec notebook pytest tests/unit/ -vv 
