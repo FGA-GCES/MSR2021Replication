@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   notebook:
@@ -8,9 +8,9 @@ services:
       - 8888:8888
       - 40000:40000
     environment:
-      - DATASET_PATH=./tcc/so_questions.csv
+      - DATASET_PATH=./questions_dataset/so_questions.csv
       - OUTPUT_PATH=./output
-      - TOPICS_NUM=15  
+      - TOPICS_NUM=15
     volumes:
       - ./output/:/app/output
       - ./output/so_results:/app/output/so_results
@@ -22,6 +22,5 @@ services:
       context: .
       dockerfile: DockerfileTest
     volumes:
-      - './notebook/:/home/notebook'
-    command:
-      bash -c "pytest -vv --cov"
+      - "./notebook/:/home/notebook"
+    command: bash -c "pytest -vv --cov"

@@ -12,7 +12,7 @@ RUN apt update -y \
 COPY makefile makefile
 COPY notebook notebook
 COPY mallet mallet
-COPY tcc tcc
+COPY questions_dataset questions_dataset
 COPY output output
 COPY init-docker.py .
 COPY SO_dataset_analysis.ipynb .
